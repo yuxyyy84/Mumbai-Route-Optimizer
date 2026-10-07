@@ -1,0 +1,47 @@
+id,name,area,lat,lng,parcels
+0,Depot (Kurla),Kurla,19.0728,72.8826,0
+1,Gateway of India,Colaba,18.922,72.8347,10
+2,Colaba Causeway,Colaba,18.918,72.8322,7
+3,Churchgate Station,Churchgate,18.9322,72.8264,7
+4,CSMT,Fort,18.9398,72.8355,9
+5,Crawford Market,Fort,18.9473,72.8345,6
+6,Girgaon Chowpatty,Girgaon,18.9541,72.8139,8
+7,Hanging Gardens,Malabar Hill,18.9569,72.8042,9
+8,Grant Road Station,Grant Road,18.9644,72.8157,3
+9,Byculla Station,Byculla,18.9767,72.8333,1
+10,Mumbai Central Station,Mumbai Central,18.9696,72.8193,4
+11,Haji Ali Dargah,Haji Ali,18.9827,72.8089,3
+12,Mahalaxmi Station,Mahalaxmi,18.9826,72.8227,9
+13,Phoenix Palladium,Lower Parel,18.9944,72.8258,10
+14,Worli Naka,Worli,19.0143,72.8179,1
+15,Siddhivinayak Temple,Prabhadevi,19.0169,72.8302,5
+16,Dadar Station,Dadar,19.0178,72.8433,9
+17,Shivaji Park,Dadar,19.027,72.8378,2
+18,Matunga Station,Matunga,19.027,72.8486,8
+19,Wadala Road Station,Wadala,19.017,72.8585,2
+20,Sion Station,Sion,19.039,72.8619,5
+21,Dharavi,Dharavi,19.043,72.8553,9
+22,Mahim Station,Mahim,19.0408,72.8408,4
+23,Lilavati Hospital,Bandra West,19.051,72.829,4
+24,Bandra Station,Bandra,19.0544,72.8403,3
+25,Bandra Bandstand,Bandra West,19.044,72.819,8
+26,BKC,Bandra East,19.067,72.869,3
+27,Chembur Station,Chembur,19.0622,72.9005,10
+28,Santacruz Station,Santacruz,19.0813,72.8417,5
+29,Mumbai Airport T2,Andheri East,19.0896,72.8656,5
+30,Phoenix Marketcity,Kurla,19.0865,72.889,6
+31,Ghatkopar Station,Ghatkopar,19.086,72.9081,6
+32,Juhu Beach,Juhu,19.0988,72.8265,6
+33,Vile Parle Station,Vile Parle,19.0997,72.8438,6
+34,Andheri Station,Andheri,19.1197,72.8464,10
+35,Hiranandani Gardens,Powai,19.1176,72.906,9
+36,IIT Bombay,Powai,19.1334,72.9133,8
+37,Vikhroli Station,Vikhroli,19.1115,72.9279,8
+38,Versova Beach,Versova,19.133,72.811,7
+39,Jogeshwari Station,Jogeshwari,19.1361,72.8491,4
+40,Goregaon Station,Goregaon,19.1649,72.8493,10
+41,Malad Station,Malad,19.186,72.8485,5
+42,Kandivali Station,Kandivali,19.2047,72.8527,3
+43,Borivali Station,Borivali,19.2307,72.8567,9
+44,Mulund Station,Mulund,19.1726,72.956,2
+45,Bhandup Station,Bhandup,19.1436,72.9372,9

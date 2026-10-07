@@ -1,0 +1,4 @@
+method,distance_km,vehicles_used,vs_greedy_%,runtime_s
+Greedy capacity-aware NN,276.64,4,0.0,0.0
+Greedy + 2-opt + relocate,240.4,4,13.1,0.0
+Sweep + 2-opt + relocate,210.33,4,24.0,0.0

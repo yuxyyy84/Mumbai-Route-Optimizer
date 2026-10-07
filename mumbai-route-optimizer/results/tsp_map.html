@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TSP best tour - Genetic algorithm</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  html, body, #map { height: 100%; margin: 0; }
+  .title { position: absolute; z-index: 1000; top: 10px; left: 55px; background: white;
+           padding: 6px 12px; border-radius: 4px; font: 14px sans-serif; box-shadow: 0 1px 4px #0006; }
+</style>
+</head>
+<body>
+<div class="title">TSP best tour - Genetic algorithm</div>
+<div id="map"></div>
+<script>
+const stops = [{"name": "Depot (Kurla)", "area": "Kurla", "lat": 19.0728, "lng": 72.8826, "parcels": 0}, {"name": "Gateway of India", "area": "Colaba", "lat": 18.922, "lng": 72.8347, "parcels": 10}, {"name": "Colaba Causeway", "area": "Colaba", "lat": 18.918, "lng": 72.8322, "parcels": 7}, {"name": "Churchgate Station", "area": "Churchgate", "lat": 18.9322, "lng": 72.8264, "parcels": 7}, {"name": "CSMT", "area": "Fort", "lat": 18.9398, "lng": 72.8355, "parcels": 9}, {"name": "Crawford Market", "area": "Fort", "lat": 18.9473, "lng": 72.8345, "parcels": 6}, {"name": "Girgaon Chowpatty", "area": "Girgaon", "lat": 18.9541, "lng": 72.8139, "parcels": 8}, {"name": "Hanging Gardens", "area": "Malabar Hill", "lat": 18.9569, "lng": 72.8042, "parcels": 9}, {"name": "Grant Road Station", "area": "Grant Road", "lat": 18.9644, "lng": 72.8157, "parcels": 3}, {"name": "Byculla Station", "area": "Byculla", "lat": 18.9767, "lng": 72.8333, "parcels": 1}, {"name": "Mumbai Central Station", "area": "Mumbai Central", "lat": 18.9696, "lng": 72.8193, "parcels": 4}, {"name": "Haji Ali Dargah", "area": "Haji Ali", "lat": 18.9827, "lng": 72.8089, "parcels": 3}, {"name": "Mahalaxmi Station", "area": "Mahalaxmi", "lat": 18.9826, "lng": 72.8227, "parcels": 9}, {"name": "Phoenix Palladium", "area": "Lower Parel", "lat": 18.9944, "lng": 72.8258, "parcels": 10}, {"name": "Worli Naka", "area": "Worli", "lat": 19.0143, "lng": 72.8179, "parcels": 1}, {"name": "Siddhivinayak Temple", "area": "Prabhadevi", "lat": 19.0169, "lng": 72.8302, "parcels": 5}, {"name": "Dadar Station", "area": "Dadar", "lat": 19.0178, "lng": 72.8433, "parcels": 9}, {"name": "Shivaji Park", "area": "Dadar", "lat": 19.027, "lng": 72.8378, "parcels": 2}, {"name": "Matunga Station", "area": "Matunga", "lat": 19.027, "lng": 72.8486, "parcels": 8}, {"name": "Wadala Road Station", "area": "Wadala", "lat": 19.017, "lng": 72.8585, "parcels": 2}, {"name": "Sion Station", "area": "Sion", "lat": 19.039, "lng": 72.8619, "parcels": 5}, {"name": "Dharavi", "area": "Dharavi", "lat": 19.043, "lng": 72.8553, "parcels": 9}, {"name": "Mahim Station", "area": "Mahim", "lat": 19.0408, "lng": 72.8408, "parcels": 4}, {"name": "Lilavati Hospital", "area": "Bandra West", "lat": 19.051, "lng": 72.829, "parcels": 4}, {"name": "Bandra Station", "area": "Bandra", "lat": 19.0544, "lng": 72.8403, "parcels": 3}, {"name": "Bandra Bandstand", "area": "Bandra West", "lat": 19.044, "lng": 72.819, "parcels": 8}, {"name": "BKC", "area": "Bandra East", "lat": 19.067, "lng": 72.869, "parcels": 3}, {"name": "Chembur Station", "area": "Chembur", "lat": 19.0622, "lng": 72.9005, "parcels": 10}, {"name": "Santacruz Station", "area": "Santacruz", "lat": 19.0813, "lng": 72.8417, "parcels": 5}, {"name": "Mumbai Airport T2", "area": "Andheri East", "lat": 19.0896, "lng": 72.8656, "parcels": 5}, {"name": "Phoenix Marketcity", "area": "Kurla", "lat": 19.0865, "lng": 72.889, "parcels": 6}, {"name": "Ghatkopar Station", "area": "Ghatkopar", "lat": 19.086, "lng": 72.9081, "parcels": 6}, {"name": "Juhu Beach", "area": "Juhu", "lat": 19.0988, "lng": 72.8265, "parcels": 6}, {"name": "Vile Parle Station", "area": "Vile Parle", "lat": 19.0997, "lng": 72.8438, "parcels": 6}, {"name": "Andheri Station", "area": "Andheri", "lat": 19.1197, "lng": 72.8464, "parcels": 10}, {"name": "Hiranandani Gardens", "area": "Powai", "lat": 19.1176, "lng": 72.906, "parcels": 9}, {"name": "IIT Bombay", "area": "Powai", "lat": 19.1334, "lng": 72.9133, "parcels": 8}, {"name": "Vikhroli Station", "area": "Vikhroli", "lat": 19.1115, "lng": 72.9279, "parcels": 8}, {"name": "Versova Beach", "area": "Versova", "lat": 19.133, "lng": 72.811, "parcels": 7}, {"name": "Jogeshwari Station", "area": "Jogeshwari", "lat": 19.1361, "lng": 72.8491, "parcels": 4}, {"name": "Goregaon Station", "area": "Goregaon", "lat": 19.1649, "lng": 72.8493, "parcels": 10}, {"name": "Malad Station", "area": "Malad", "lat": 19.186, "lng": 72.8485, "parcels": 5}, {"name": "Kandivali Station", "area": "Kandivali", "lat": 19.2047, "lng": 72.8527, "parcels": 3}, {"name": "Borivali Station", "area": "Borivali", "lat": 19.2307, "lng": 72.8567, "parcels": 9}, {"name": "Mulund Station", "area": "Mulund", "lat": 19.1726, "lng": 72.956, "parcels": 2}, {"name": "Bhandup Station", "area": "Bhandup", "lat": 19.1436, "lng": 72.9372, "parcels": 9}];
+const routes = [[0, 27, 30, 31, 37, 35, 36, 45, 44, 43, 42, 41, 40, 39, 34, 38, 32, 33, 28, 24, 23, 25, 22, 17, 15, 14, 11, 10, 8, 7, 6, 3, 2, 1, 4, 5, 9, 12, 13, 16, 19, 18, 21, 20, 26, 29, 0]];
+const colors = ["#d62728", "#1f77b4", "#2ca02c", "#ff7f0e", "#9467bd", "#8c564b", "#e377c2", "#17becf"];
+
+const map = L.map('map').setView([19.08, 72.87], 11);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18, attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+routes.forEach((r, k) => {
+  const pts = r.map(i => [stops[i].lat, stops[i].lng]);
+  L.polyline(pts, {color: colors[k % colors.length], weight: 4, opacity: 0.8})
+    .bindTooltip('Vehicle ' + (k + 1)).addTo(map);
+});
+
+stops.forEach((s, i) => {
+  const isDepot = i === 0;
+  L.circleMarker([s.lat, s.lng], {
+    radius: isDepot ? 9 : 5, color: isDepot ? 'black' : '#333',
+    fillColor: isDepot ? 'gold' : 'white', fillOpacity: 1, weight: 2
+  }).bindPopup('<b>' + s.name + '</b><br>' + s.area + (isDepot ? '' : '<br>parcels: ' + s.parcels)).addTo(map);
+});
+</script>
+</body>
+</html>

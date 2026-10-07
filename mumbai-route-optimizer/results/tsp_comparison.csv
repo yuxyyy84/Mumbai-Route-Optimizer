@@ -1,0 +1,5 @@
+method,distance_km,vs_random_%,runtime_s
+Random order (avg of 500),715.64,0.0,0.0
+Nearest neighbour,190.55,73.4,0.0
+Nearest neighbour + 2-opt,150.74,78.9,0.0
+Genetic algorithm,148.76,79.2,9.77

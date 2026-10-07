@@ -1,0 +1,5 @@
+vehicle,stops,load,distance_km,route
+1,13,75,56.7,Depot > BKC > Bandra Station > Lilavati Hospital > Bandra Bandstand > Worli Naka > Phoenix Palladium > Gateway of India > Byculla Station > Siddhivinayak Temple > Dadar Station > Matunga Station > Mahim Station > Dharavi > Depot
+2,13,74,55.8,Depot > Sion Station > Wadala Road Station > Crawford Market > CSMT > Colaba Causeway > Churchgate Station > Girgaon Chowpatty > Hanging Gardens > Grant Road Station > Mumbai Central Station > Haji Ali Dargah > Mahalaxmi Station > Shivaji Park > Depot
+3,8,58,40.11,Depot > Chembur Station > Ghatkopar Station > Vikhroli Station > Bhandup Station > Mulund Station > IIT Bombay > Hiranandani Gardens > Phoenix Marketcity > Depot
+4,11,70,57.71,Depot > Mumbai Airport T2 > Vile Parle Station > Andheri Station > Jogeshwari Station > Goregaon Station > Malad Station > Kandivali Station > Borivali Station > Versova Beach > Juhu Beach > Santacruz Station > Depot
